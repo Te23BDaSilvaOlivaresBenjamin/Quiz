@@ -1,55 +1,146 @@
-﻿using System.Diagnostics.CodeAnalysis;
+﻿int hp= 5;
 
 Console.WriteLine("Är du redo för frågesporten?");
-int hp = 3;
 string fs = "";
 while (fs != "ja")
 {
-    fs = Console.ReadLine() .ToLower();
-    if (fs == "ja")
-    {
-        Console.WriteLine("Fråga 1, Hur gamla är joe biden? a)81 b) 69 c)15");
-        string svar1 = "";
-        while (svar1 != "a" && svar1 != "b" && svar1 !="c");
-        if (svar1 == "a")
+  fs = Console.ReadLine().ToLower();
+  if (fs == "ja")
+  {
+      Console.WriteLine("Fråga 1, Hur gamla är joe biden? a)81 b) 69 c)15");
+      string svar1 = "";
+      while (svar1 != "a" && svar1 != "b" && svar1 != "c")
+      {
+        svar1 = Console.ReadLine();
+      if (svar1 == "a")
         {
-            // string svar2 != "a" && svar2 != "b" && svar2 !="c";
-            Rätt();
-            Console.WriteLine("Vad skulle du säga är bästa sporten?");
+          Rätt();
+          Console.WriteLine("Du har svart rätt!");
         }
-        else if(svar1 == "b")
+      else if (svar1 == "b" || svar1 == "c")
         {
-            fel();
-            hp = hp - 1;
-            Console.WriteLine("Vad skulle du säga är bästa sporten?");
+          fel();
+          Console.WriteLine("Du har svarat fel");
+          hp -= 1;
         }
-        else if(svar1 == "c")
+      else
         {
-            fel();
-            hp = hp - 1;
-            Console.WriteLine("Vad skulle du säga är bästa sporten?");
+          Console.WriteLine("Svara a,b eller c !");
         }
-        else
-        {
-            Console.WriteLine("Svara a,b eller c !");
-        }
-    }
-    else if(fs == "nej")
-    {
-        Väntar();
-        Console.WriteLine("Svara på frågan med ja när du är redo");
-    }
-    else
-    {
-        Console.WriteLine("Svara på frågan med ja eller nej");
-    }
-    Console.ReadLine();
-}
+      }
 
+
+        //-------------------------------------------------------------------------
+      Console.WriteLine("Vilket land ligger i sydamerika? a) Puerto Rico b) Peru c) Panama");
+      string svar2 = "";
+      while (svar2 != "a" && svar2 != "b" && svar2 != "c")
+      {
+        svar2 = Console.ReadLine();
+        if (svar2 == "b")
+          {
+            Rätt();
+            Console.WriteLine("Du har svarat rätt!");
+          }
+        else if (svar2 == "a" || svar2 == "c")
+          {
+            fel();
+            Console.WriteLine("Du svara fel");
+            hp -= 1;
+          }
+        else
+          {
+            Console.WriteLine("Svara a,b  eller c !");
+          }
+      }
+
+
+        //-------------------------------------------------------------------------
+        Console.WriteLine("Vad skulle du säga är bästa sporten? a) Spökboll b) Cricket c) Fotboll");
+        string svar3 = "";
+        while (svar3 != "a" && svar3 != "b" && svar3 != "c")
+        {
+          svar3 = Console.ReadLine();
+        if (svar3 == "c")
+          {
+            Rätt();
+            Console.WriteLine("Du har svarat rätt!");
+          }
+        else if (svar3 == "b" || svar3 == "a")
+          {
+            fel();
+            Console.WriteLine("Du svara fel");
+            hp -= 1;
+          }
+        else
+          {
+            Console.WriteLine("Svara a,b  eller c !");
+          }
+        }
+
+        Console.WriteLine("Vad ligger i stockholm? a) Eskilstuna b) Lidingö c) Skåne");
+        string svar4 = "";
+        while (svar4 != "a" && svar4 != "b" && svar4 != "c")
+        {
+          svar4 = Console.ReadLine();
+        if (svar4 == "b")
+          {
+            Rätt();
+            Console.WriteLine("Du har svarat rätt!");
+          }
+        else if (svar4 == "a" || svar4 == "c")
+          {
+            fel();
+            Console.WriteLine("Du svara fel");
+            hp -= 1;
+          }
+        else
+          {
+            Console.WriteLine("Svara a,b  eller c !");
+          }
+        }
+
+
+        Console.WriteLine("Vilket lag är best? a) Bajen b) AIK c) DIF");
+        string svar5 = "";
+        while (svar5 != "a" && svar5 != "b" && svar5 != "c")
+        {
+          svar5 = Console.ReadLine();
+        if (svar5 == "a")
+          {
+            Rätt();
+            Console.WriteLine("Du har svarat rätt!");
+          }
+        else if (svar5 == "b" || svar5 == "c")
+          {
+            fel();
+            Console.WriteLine("Du svara fel");
+            hp -= 1;
+          }
+        else
+          {
+            Console.WriteLine("Svara a,b  eller c !");
+          }
+        }
+    {
+      
+    }
+    Console.WriteLine($"Du har fått {hp} utav 5");
+    Console.ReadLine();
+  }
+  else if (fs == "nej")
+  {
+    Väntar();
+  Console.WriteLine("Svara med ja när du är redo");
+  }
+  else
+  {
+  Console.WriteLine("Svara med Ja eller Nej");
+  }
+}
 
 static void Rätt()
 {
-    Console.WriteLine("""                                                                                    
+  Console.WriteLine("""                                                                                    
                                                                                       ..-====:.     
                                                                                   ..=++++++++++:.   
                                                                                 .=+++++++++++++=.   
@@ -104,7 +195,7 @@ static void Rätt()
 
 static void fel()
 {
-    Console.WriteLine("""
+  Console.WriteLine("""
         .....   ....#+. .....    .....   .....   .....    .....   .....   .....    ...+#.  .....   .....
     .....   ..+####=.....    .....   .....   .....    .....   .....   .....    .=####+......   .....
 ............=########-........................................................-########+............
@@ -164,7 +255,7 @@ static void fel()
 }
 static void Väntar()
 {
-    Console.WriteLine("""
+  Console.WriteLine("""
                                                                                                  ...
                                                                .................                 ...
                                     .............................------------:..                    
